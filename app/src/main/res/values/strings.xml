@@ -1,0 +1,73 @@
+<resources>
+
+    <!-- ================================================= -->
+    <!-- App / Global                                      -->
+    <!-- ================================================= -->
+    <string name="app_name">Weight Tracker</string>
+    <string name="weight_tracker_logo">Brand Logo</string>
+
+    <!-- Screens / Navigation -->
+    <string name="daily_weight">Enter Today’s Weight</string>
+    <string name="enter_goal_weight">Enter Goal Weight</string>
+    <string name="weight_history">Weight History</string>
+    <string name="new_entry">New Entry</string>
+    <string name="set_goal">Set Goal</string>
+
+    <!-- ================================================= -->
+    <!-- Auth                                              -->
+    <!-- ================================================= -->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="create_account">Create Account</string>
+    <string name="logout">Logout</string>
+
+    <!-- ================================================= -->
+    <!-- Weight entries                                    -->
+    <!-- ================================================= -->
+    <!-- Table Headers -->
+    <string name="date">Date</string>
+    <string name="weight">Weight</string>
+    <string name="delta">Δ</string>
+
+    <!-- Actions -->
+    <string name="submit_entry">Submit Entry</string>
+    <string name="edit_entry">Edit Entry</string>
+    <string name="delete_entry">Delete Entry</string>
+    <string name="save_goal">Save Goal</string>
+
+    <!-- ================================================= -->
+    <!-- Notifications / SMS                               -->
+    <!-- ================================================= -->
+    <string name="sms_notifications">Notifications</string>
+    <string name="sms_permission">Allow SMS Notifications?</string>
+    <string name="notification_feature">Enabling notifications will allow us to inform you when
+        you reach your goal weight.\n\nSMS permissions are required for this feature.</string>
+    <string name="allow_sms">Allow SMS</string>
+    <string name="deny">Deny</string>
+
+    <!-- ================================================= -->
+    <!-- Analytics / Stats                                 -->
+    <!-- ================================================= -->
+    <!-- labels -->
+    <string name="label_weekly_avg">Weekly avg</string>
+    <string name="label_monthly_avg">Monthly avg</string>
+    <string name="label_trend">Trend</string>
+    <string name="label_goal">Goal</string>
+    <string name="label_rate">Rate</string>
+    <string name="label_eta">ETA</string>
+
+    <!-- formats -->
+    <string name="stat_dash">—</string>
+    <string name="stat_labeled_value">%1$s: %2$s</string>
+    <string name="weight_display">%1$.1f lbs</string>
+    <string name="delta_value">%1$+.1f</string>
+    <string name="rate_value_format">%1$.2f lbs/week</string>
+    <string name="eta_days">~%1$dd</string>
+
+    <!-- trend values -->
+    <string name="trend_loss">↓ Losing</string>
+    <string name="trend_gain">↑ Gaining</string>
+    <string name="trend_flat">— No Change</string>
+
+</resources>

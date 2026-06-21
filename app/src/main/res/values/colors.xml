@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Basic -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray">#696969</color>
+    <color name="bottom_nav_background">#00000000</color>
+
+    <!-- Light Theme -->
+    <color name="md_theme_light_primary">@android:color/holo_green_dark</color>
+    <color name="md_theme_light_onPrimary">@color/black</color>
+
+    <color name="md_theme_light_surface">@color/white</color>
+    <color name="md_theme_light_onSurface">@color/black</color>
+
+    <color name="md_theme_light_secondary">@color/gray</color>
+    <color name="md_theme_light_onSecondary">@color/black</color>
+
+    <!-- Dark Theme -->
+    <color name="md_theme_dark_primary">@android:color/holo_green_light</color>
+    <color name="md_theme_dark_onPrimary">@color/black</color>
+
+    <color name="md_theme_dark_surface">#212121</color>
+    <color name="md_theme_dark_onSurface">@color/white</color>
+
+    <color name="md_theme_dark_secondary">@color/gray</color>
+    <color name="md_theme_dark_onSecondary">@color/white</color>
+
+</resources>

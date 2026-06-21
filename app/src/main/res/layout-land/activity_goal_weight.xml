@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="26dp"
+    android:background="?attr/colorSurface">
+
+    <ImageView
+        android:id="@+id/brandLogo"
+        android:src="@drawable/weight_tracker_logo"
+        android:contentDescription="@string/weight_tracker_logo"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="50dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintHeight_max="300dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/goalInputLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:tint="?attr/colorOnSurface" />
+
+    <TextView
+        android:id="@+id/goalTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_goal_weight"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/goalInputLayout"
+        app:layout_constraintTop_toTopOf="@+id/brandLogo"
+        app:layout_constraintBottom_toTopOf="@+id/goalInputLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/goalInputLayout"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintWidth_max="400dp"
+        app:layout_constraintBottom_toTopOf="@+id/saveGoalButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/brandLogo"
+        app:layout_constraintTop_toBottomOf="@id/goalTitle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/goalWeightField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/weight"
+            android:inputType="numberDecimal"
+            tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveGoalButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/save_goal"
+        app:layout_constraintTop_toBottomOf="@id/goalInputLayout"
+        app:layout_constraintBottom_toBottomOf="@+id/brandLogo"
+        app:layout_constraintEnd_toEndOf="@id/goalInputLayout"
+        app:layout_constraintStart_toStartOf="@id/goalInputLayout"
+        tools:ignore="VisualLintButtonSize" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/logout"
+        app:icon="@drawable/ic_logout"
+        app:iconPadding="1dp"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        style="?attr/materialIconButtonStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/smsNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/smsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sms_notifications"
+            android:textColor="?attr/colorOnSurfaceVariant" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/smsToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/bottom_nav_background"
+        app:itemIconTint="?attr/colorPrimary"
+        app:itemTextColor="?attr/colorOnSurfaceVariant"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="VisualLintBottomNav" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

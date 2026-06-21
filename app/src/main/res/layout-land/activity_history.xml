@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="26dp"
+    android:background="?attr/colorSurface">
+
+    <ImageView
+        android:id="@+id/brandLogo"
+        android:contentDescription="@string/weight_tracker_logo"
+        android:scaleType="fitCenter"
+        android:src="@drawable/weight_tracker_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintWidth_max="150dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toStartOf="@+id/statsPanel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/historyTitle"
+        app:tint="?attr/colorOnSurface" />
+
+    <LinearLayout
+        android:id="@+id/statsPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/historyRecycler"
+        app:layout_constraintEnd_toStartOf="@+id/statsDivider"
+        app:layout_constraintStart_toEndOf="@+id/brandLogo"
+        app:layout_constraintTop_toBottomOf="@+id/historyTitle">
+
+        <TextView
+            android:id="@+id/goalWeightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_goal" />
+
+        <TextView
+            android:id="@+id/weeklyAvgText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_weekly_avg" />
+
+        <TextView
+            android:id="@+id/monthlyAvgText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_monthly_avg" />
+
+        <TextView
+            android:id="@+id/trendText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_trend" />
+
+        <TextView
+            android:id="@+id/rateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_rate" />
+
+        <TextView
+            android:id="@+id/etaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_eta" />
+
+    </LinearLayout>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/statsDivider"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        app:dividerColor="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="@+id/headerRow"
+        app:layout_constraintBottom_toBottomOf="@+id/historyRecycler"
+        app:layout_constraintStart_toEndOf="@+id/statsPanel"
+        app:layout_constraintEnd_toStartOf="@+id/headerRow" />
+
+    <TextView
+        android:id="@+id/historyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weight_history"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/smsNotifications"
+        app:layout_constraintStart_toEndOf="@+id/logoutButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/historyRecycler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/statsDivider"
+        app:layout_constraintTop_toBottomOf="@+id/historyTitle">
+
+        <!-- Date Header -->
+        <TextView
+            android:id="@+id/headerDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/headerWeight"
+            app:layout_constraintHorizontal_weight="1.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Weight Header -->
+        <TextView
+            android:id="@+id/headerWeight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/weight"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/headerDelta"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/headerDate"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Delta Header -->
+        <TextView
+            android:id="@+id/headerDelta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:gravity="center"
+            android:text="@string/delta"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/headerEditSpacer"
+            app:layout_constraintHorizontal_weight="0.6"
+            app:layout_constraintStart_toEndOf="@id/headerWeight"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Spacer for Edit -->
+        <Space
+            android:id="@+id/headerEditSpacer"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/headerDeleteSpacer"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Spacer for Delete -->
+        <Space
+            android:id="@+id/headerDeleteSpacer"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/historyRecycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toEndOf="@+id/headerRow"
+        app:layout_constraintStart_toStartOf="@+id/headerRow"
+        app:layout_constraintTop_toBottomOf="@id/headerRow" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/logout"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        style="?attr/materialIconButtonStyle"
+        app:icon="@drawable/ic_logout"
+        app:iconPadding="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/smsNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/smsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sms_notifications"
+            android:textColor="?attr/colorOnSurfaceVariant" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/smsToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/bottom_nav_background"
+        app:itemIconTint="?attr/colorPrimary"
+        app:itemTextColor="?attr/colorOnSurfaceVariant"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        tools:ignore="VisualLintBottomNav" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
